@@ -31,40 +31,20 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Your Email Address",
-                      style: TxtTheme.calloutRegular
-                          .copyWith(color: swatch.LabelColors.secondary),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
                   InputField(
                       type: TextInputType.emailAddress,
                       style: TxtTheme.calloutRegular
                           .copyWith(color: swatch.BaseColors.white),
-                      label: "Enter Your Email Address",
+                      hint: "Enter Your Email Address",
+                      label: "Your Email Address",
                       icon: const Icon(Icons.email_outlined)),
                   const SizedBox(
                     height: 16,
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Your Password",
-                      style: TxtTheme.calloutRegular
-                          .copyWith(color: swatch.LabelColors.secondary),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 12,
-                  ),
                   InputField(
+                      hint: "Enter Your Password",
                       type: TextInputType.visiblePassword,
-                      label: "Enter Your Password",
+                      label: "Your Password",
                       style: TxtTheme.calloutRegular
                           .copyWith(color: swatch.BaseColors.white),
                       icon: const Icon(Icons.vpn_key_outlined)),
