@@ -20,10 +20,11 @@ class SecondaryColors {
   static const lightyellow = Color(0xffFFF6E4);
   static const lightpurple = Color(0xffF8F0FF);
   static const lighttosca = Color(0xffDDEEEA);
-  static const lightdarkGray = Color(0xff292B3E);
+  static const mediumGray = Color(0xff292B3E);
 }
 
 const separatorColor = Color(0xffC6C6C8);
+const progressbarBg = Color(0xff363748);
 
 class LabelColors {
   static const secondary = Color(0xff8A8A8E);
