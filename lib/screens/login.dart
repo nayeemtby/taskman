@@ -18,13 +18,15 @@ class LoginScreen extends StatelessWidget {
             MyAppBar(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Icon(
-                    Icons.close,
+                  const BtnFlat(
+                    child: Icon(
+                      Icons.close,
+                    ),
                   ),
-                  BtnTxt(
-                    text: "Sign Up",
-                    style: TxtTheme.calloutBold
-                        .copyWith(color: swatch.FillColors.primary),
+                  BtnFlat(
+                    child: Text("Sign Up",
+                        style: TxtTheme.calloutBold
+                            .copyWith(color: swatch.FillColors.primary)),
                   )
                 ]),
             Padding(
@@ -58,10 +60,12 @@ class LoginScreen extends StatelessWidget {
                   InkWell(
                     splashFactory: InkRipple.splashFactory,
                     onTap: () {},
-                    child: BtnTxt(
-                      text: "Forgot Your Password",
-                      style: TxtTheme.calloutRegular
-                          .copyWith(color: swatch.LabelColors.quarternary),
+                    child: BtnFlat(
+                      child: Text(
+                        "Forgot Your Password",
+                        style: TxtTheme.calloutRegular
+                            .copyWith(color: swatch.LabelColors.quarternary),
+                      ),
                     ),
                   )
                 ],
