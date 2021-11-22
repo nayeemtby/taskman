@@ -123,20 +123,13 @@ class BtnPrimaryAlt extends StatelessWidget {
   }
 }
 
-class BtnTxt extends StatelessWidget {
-  final String text;
-  final TextStyle? style;
-  const BtnTxt({Key? key, required this.text, this.style}) : super(key: key);
+class BtnFlat extends StatelessWidget {
+  final Widget child;
+  const BtnFlat({Key? key, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      splashFactory: InkRipple.splashFactory,
-      onTap: () {},
-      child: Text(
-        text,
-        style: style,
-      ),
-    );
+        splashFactory: InkRipple.splashFactory, onTap: () {}, child: child);
   }
 }
