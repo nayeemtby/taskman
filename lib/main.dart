@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:taskman/screens/task_screen.dart';
 // import 'test.dart';
 // import 'screens/splash.dart';
 // import 'screens/onboarding.dart';
-import 'screens/login.dart';
+// import 'screens/login.dart';
 
 void main(List<String> args) {
   runApp(const TaskManagerApp());
@@ -18,7 +19,7 @@ class TaskManagerApp extends StatelessWidget {
           fontFamily: 'Nunito',
           iconTheme: const IconThemeData(color: Colors.white)),
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const TaskScreen(),
     );
   }
 }
