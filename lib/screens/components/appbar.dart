@@ -4,19 +4,22 @@ class MyAppBar extends StatelessWidget {
   final double height;
   final MainAxisAlignment mainAxisAlignment;
   final List<Widget> children;
-  final double padding;
+  final double horizontalPadding;
+  final double verticalPadding;
   const MyAppBar(
       {Key? key,
       this.height = 56,
       required this.mainAxisAlignment,
       required this.children,
-      this.padding = 16})
+      this.horizontalPadding = 16,
+      this.verticalPadding = 0})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: padding),
+      padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding, vertical: verticalPadding),
       height: height,
       width: double.infinity,
       child: Row(
