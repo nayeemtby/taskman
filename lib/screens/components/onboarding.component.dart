@@ -105,6 +105,7 @@ class _TextCarousselState extends State<TextCaroussel>
           child: Row(
             children: [
               AnimatedContainer(
+                curve: Curves.easeInOutCubic,
                 duration: const Duration(milliseconds: 300),
                 width: _indi[0][1],
                 height: 8,
@@ -130,6 +131,7 @@ class _TextCarousselState extends State<TextCaroussel>
                 width: 8,
               ),
               AnimatedContainer(
+                curve: Curves.easeInOutCubic,
                 duration: const Duration(milliseconds: 300),
                 width: _indi[2][1],
                 height: 8,
