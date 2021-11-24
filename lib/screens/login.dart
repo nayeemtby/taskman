@@ -53,7 +53,10 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  const BtnPrimary(txt: "Login"),
+                  BtnPrimary(
+                    txt: "Login",
+                    onTap: () {},
+                  ),
                   const SizedBox(
                     height: 24,
                   ),

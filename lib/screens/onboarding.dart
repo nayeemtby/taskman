@@ -25,16 +25,22 @@ class OnboardScreen extends StatelessWidget {
             ),
             // Text(size.height.toString() + "x" + size.width.toString()),
             const Expanded(child: TextCaroussel()),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: BtnPrimary(txt: "Sign Up"),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: BtnPrimary(
+                txt: "Sign Up",
+                onTap: () {},
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 16, right: 16, bottom: 53),
-              child: BtnSecondary(txt: "Log In"),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, right: 16, bottom: 53),
+              child: BtnSecondary(
+                txt: "Log In",
+                onTap: () {},
+              ),
             ),
           ],
         ),

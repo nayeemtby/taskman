@@ -44,7 +44,10 @@ class SplashScreen extends StatelessWidget {
                   ],
                 ),
               )),
-              const BtnPrimaryAlt(txt: "Getting Started"),
+              BtnPrimaryAlt(
+                txt: "Getting Started",
+                onTap: () {},
+              ),
             ],
           ),
         ),
