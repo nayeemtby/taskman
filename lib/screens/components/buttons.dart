@@ -5,21 +5,23 @@ class BtnPrimary extends StatelessWidget {
   final double height;
   final double? width;
   final double fontsize;
-  const BtnPrimary(
+  Function() onTap;
+  BtnPrimary(
       {Key? key,
       required this.txt,
       this.height = 56,
       this.width,
-      this.fontsize = 17})
+      this.fontsize = 17,
+      required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: height,
       width: width ?? double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onTap,
         child: Text(
           txt,
           style: TextStyle(
@@ -41,21 +43,23 @@ class BtnSecondary extends StatelessWidget {
   final double height;
   final double? width;
   final double fontsize;
+  final Function() onTap;
   const BtnSecondary(
       {Key? key,
       required this.txt,
       this.height = 56,
       this.width,
-      this.fontsize = 17})
+      this.fontsize = 17,
+      required this.onTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: height,
       width: width ?? double.infinity,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: onTap,
         child: Text(
           txt,
           style: TextStyle(
@@ -78,12 +82,14 @@ class BtnPrimaryAlt extends StatelessWidget {
   final double height;
   final double? width;
   final double fontsize;
+  final Function() onTap;
   const BtnPrimaryAlt(
       {Key? key,
       required this.txt,
       this.height = 56,
       this.width,
-      this.fontsize = 17})
+      this.fontsize = 17,
+      required this.onTap})
       : super(key: key);
 
   @override
@@ -96,7 +102,7 @@ class BtnPrimaryAlt extends StatelessWidget {
         customBorder: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(height / 2)),
         splashFactory: InkRipple.splashFactory,
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 16),
           height: height,
@@ -125,11 +131,12 @@ class BtnPrimaryAlt extends StatelessWidget {
 
 class BtnFlat extends StatelessWidget {
   final Widget child;
-  const BtnFlat({Key? key, required this.child}) : super(key: key);
+  final Function()? onTap;
+  const BtnFlat({Key? key, required this.child, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        splashFactory: InkRipple.splashFactory, onTap: () {}, child: child);
+        splashFactory: InkRipple.splashFactory, onTap: onTap, child: child);
   }
 }
