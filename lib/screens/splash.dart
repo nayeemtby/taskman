@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'components/buttons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'theme/attentiontext.dart';
 import 'theme/textheme.dart';
-import 'package:taskman/screens/theme/colortheme.dart' as swatch;
+import 'theme/colortheme.dart' as swatch;
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -32,7 +31,7 @@ class SplashScreen extends StatelessWidget {
                     ),
                     Text(
                       "RANCANG",
-                      style: attentionTextStyle.copyWith(color: Colors.white),
+                      style: TxtTheme.largeBold.copyWith(color: Colors.white),
                     ),
                     const SizedBox(
                       height: 8,

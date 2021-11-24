@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class TxtTheme {
+  /// Large/Bold
+  static const largeBold = TextStyle(fontWeight: FontWeight.w700, fontSize: 36);
+
   /// Headline/Regular
   static const headlineRegular =
       TextStyle(fontSize: 17, fontWeight: FontWeight.w400);
