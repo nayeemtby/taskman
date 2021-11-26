@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taskman/screens/components/appbar.dart';
 import 'package:taskman/screens/components/task_screen.component.dart';
 import 'package:taskman/screens/theme/textheme.dart';
 import 'theme/colortheme.dart' as swatch;
 
 class TaskScreen extends StatelessWidget {
-  const TaskScreen({Key? key}) : super(key: key);
+  final bool showTeamCreated;
+  const TaskScreen({Key? key, this.showTeamCreated = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    if (showTeamCreated) {
+      Future.delayed(
+          Duration.zero,
+          () => showDialog(
+              context: context, builder: (ctx) => const TeamCreatedDialog()));
+    }
     return SafeArea(
       child: Scaffold(
         floatingActionButton: Padding(
