@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskman/screens/components/buttons.dart';
 import '../theme/colortheme.dart' as swatch;
 import '../theme/textheme.dart';
 
@@ -263,6 +264,56 @@ class TaskCategory extends StatelessWidget {
                 TxtTheme.footnote.copyWith(color: swatch.FillColors.secondary),
           )
         ],
+      ),
+    );
+  }
+}
+
+class TeamCreatedDialog extends StatelessWidget {
+  const TeamCreatedDialog({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      backgroundColor: swatch.PrimaryColors.darkGray,
+      // insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const CircleAvatar(
+              radius: 60,
+              backgroundColor: swatch.SecondaryColors.mediumGray,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            Text(
+              "Congratulations!",
+              style: TxtTheme.titleLarge
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Text(
+              "Parto team was created successfully.\nCreate your latest project so you can work with your team.",
+              textAlign: TextAlign.center,
+              style: TxtTheme.calloutRegular
+                  .copyWith(color: swatch.FillColors.secondary),
+            ),
+            const SizedBox(
+              height: 32,
+            ),
+            BtnPrimary(
+                txt: "Next",
+                onTap: () {
+                  Navigator.pop(context);
+                })
+          ],
+        ),
       ),
     );
   }
