@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskman/screens/components/buttons.dart';
 import 'package:taskman/screens/components/input.dart';
+import 'package:taskman/screens/task_screen.dart';
 import 'package:taskman/screens/theme/textheme.dart';
 import 'components/appbar.dart';
 import 'theme/colortheme.dart' as swatch;
@@ -184,7 +186,14 @@ class _SignUpScreenState extends State<SignUpScreen>
             const SizedBox(
               height: 16,
             ),
-            BtnSecondary(txt: "Skip", onTap: () {})
+            BtnSecondary(
+                txt: "Skip",
+                onTap: () {
+                  Navigator.of(context).push(CupertinoPageRoute(
+                      builder: (ctx) => const TaskScreen(
+                            showTeamCreated: true,
+                          )));
+                })
           ],
         ),
       )
