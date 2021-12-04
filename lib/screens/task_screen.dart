@@ -17,25 +17,38 @@ class TaskScreen extends StatelessWidget {
           () => showDialog(
               context: context, builder: (ctx) => const TeamCreatedDialog()));
     }
+    // Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         floatingActionButton: Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 50),
           child: Material(
             elevation: 0,
-            borderRadius: BorderRadius.circular(32),
+            borderRadius: BorderRadius.circular(40),
             color: swatch.PrimaryColors.blue,
-            child: InkWell(
-                splashFactory: InkRipple.splashFactory,
-                borderRadius: BorderRadius.circular(32),
-                onTap: () {},
-                child: const SizedBox(
-                  height: 64,
-                  width: 64,
-                  child: Center(
-                    child: Icon(Icons.add),
-                  ),
-                )),
+            child: Builder(builder: (context) {
+              return InkWell(
+                  splashFactory: InkRipple.splashFactory,
+                  borderRadius: BorderRadius.circular(40),
+                  onTap: () {
+                    showModalBottomSheet(
+                        clipBehavior: Clip.hardEdge,
+                        isScrollControlled: true,
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(8),
+                                topRight: Radius.circular(8))),
+                        context: context,
+                        builder: (context) => const AddTaskSheet());
+                  },
+                  child: const SizedBox(
+                    height: 80,
+                    width: 80,
+                    child: Center(
+                      child: Icon(Icons.add),
+                    ),
+                  ));
+            }),
           ),
         ),
         floatingActionButtonLocation:
@@ -51,6 +64,7 @@ class TaskScreen extends StatelessWidget {
             BottomNavigationBarItem(
                 label: "Calendar", icon: Icon(Icons.calendar_today_outlined)),
             BottomNavigationBarItem(
+                tooltip: "",
                 label: "",
                 icon: SizedBox(
                   height: 12,
