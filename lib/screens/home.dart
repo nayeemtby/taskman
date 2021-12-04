@@ -141,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 controller: _pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: const [
-                  NewTaskScreen(),
+                  TaskPage(),
                   CalendarPage(),
                   SizedBox(),
                   ProjectScreen(),

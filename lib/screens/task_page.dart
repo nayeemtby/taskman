@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:taskman/screens/components/appbar.dart';
 import 'package:taskman/screens/components/task_screen.component.dart';
 import 'package:taskman/screens/theme/textheme.dart';
@@ -259,6 +258,158 @@ class TaskScreen extends StatelessWidget {
             ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TaskPage extends StatelessWidget {
+  const TaskPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      width: double.infinity,
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "Project Task",
+              style: TxtTheme.calloutBold
+                  .copyWith(color: swatch.FillColors.primary),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: SizedBox(
+                    height: 60,
+                    child: ListView(
+                      physics: const BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      children: const [
+                        TaskCategory(
+                            name: "Ongoing",
+                            count: 5,
+                            color: swatch.PrimaryColors.purple),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        TaskCategory(
+                            name: "Upcoming",
+                            count: 7,
+                            color: swatch.PrimaryColors.pink),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        TaskCategory(
+                            name: "Done",
+                            count: 2,
+                            color: swatch.PrimaryColors.tosca),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        TaskCategory(
+                            name: "Proposed",
+                            count: 10,
+                            color: swatch.PrimaryColors.yellow)
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            Text(
+              "My Task",
+              style: TxtTheme.calloutBold
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            Text(
+              "See More",
+              style: TxtTheme.calloutRegular
+                  .copyWith(color: swatch.FillColors.secondary),
+            )
+          ]),
+          Expanded(
+              child: ListView(
+            physics: const BouncingScrollPhysics(),
+            children: const [
+              TaskItem(
+                  tag: TaskTag.urgent,
+                  title: "Research Analysis",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.inReview,
+                  title: "Presentation",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.inProgress,
+                  title: "UI to code",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.approve, title: "UI Draft", total: 20, done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.urgent,
+                  title: "Research Analysis",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.approve,
+                  title: "Wireframe Building",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.urgent,
+                  title: "Research Analysis",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+              TaskItem(
+                  tag: TaskTag.inReview,
+                  title: "Research Analysis",
+                  total: 20,
+                  done: 5),
+              SizedBox(
+                height: 8,
+              ),
+            ],
+          ))
+        ],
       ),
     );
   }

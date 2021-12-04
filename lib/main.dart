@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:taskman/screens/task_screen.dart';
-// import 'test.dart';
+import 'package:taskman/screens/home.dart';
+import 'package:taskman/screens/signup.dart';
+import 'package:taskman/screens/task_page.dart';
+// import 'package:taskman/test.dart';
+// import 'package:taskman/screens/task_screen.dart';
+// import 'screens/test2.dart';
 // import 'screens/splash.dart';
 // import 'screens/onboarding.dart';
 // import 'screens/login.dart';
@@ -19,7 +23,7 @@ class TaskManagerApp extends StatelessWidget {
           fontFamily: 'Nunito',
           iconTheme: const IconThemeData(color: Colors.white)),
       debugShowCheckedModeBanner: false,
-      home: const TaskScreen(),
+      home: const HomeScreen(),
     );
   }
 }
