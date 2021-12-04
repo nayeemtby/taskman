@@ -40,13 +40,11 @@ class _SignUpScreenState extends State<SignUpScreen>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            InputField(
+            const InputField(
               type: TextInputType.emailAddress,
               hint: "Enter Your Email Address",
               label: "Your Email Address",
-              icon: const Icon(Icons.email_outlined),
-              style: TxtTheme.calloutRegular
-                  .copyWith(color: swatch.BaseColors.white),
+              icon: Icon(Icons.email_outlined),
             ),
             const SizedBox(
               height: 16,
@@ -79,23 +77,21 @@ class _SignUpScreenState extends State<SignUpScreen>
             const SizedBox(
               height: 24,
             ),
-            InputField(
-                type: TextInputType.name,
-                hint: "Enter Your Full Name",
-                label: "Your Full Name",
-                icon: const Icon(Icons.person_outline_sharp),
-                style: TxtTheme.calloutRegular
-                    .copyWith(color: swatch.BaseColors.white)),
+            const InputField(
+              type: TextInputType.name,
+              hint: "Enter Your Full Name",
+              label: "Your Full Name",
+              icon: Icon(Icons.person_outline_sharp),
+            ),
             const SizedBox(
               height: 16,
             ),
-            InputField(
-                type: TextInputType.visiblePassword,
-                hint: "Enter A New Password",
-                label: "Your Password",
-                icon: const Icon(Icons.lock_open_outlined),
-                style: TxtTheme.calloutRegular
-                    .copyWith(color: swatch.BaseColors.white)),
+            const InputField(
+              type: TextInputType.visiblePassword,
+              hint: "Enter A New Password",
+              label: "Your Password",
+              icon: Icon(Icons.lock_open_outlined),
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -116,13 +112,12 @@ class _SignUpScreenState extends State<SignUpScreen>
             const SizedBox(
               height: 16,
             ),
-            InputField(
-                type: TextInputType.name,
-                hint: "e.g Parto Team",
-                label: "Your Team Name",
-                icon: const Icon(Icons.person_outline_sharp),
-                style: TxtTheme.calloutRegular
-                    .copyWith(color: swatch.BaseColors.white)),
+            const InputField(
+              type: TextInputType.name,
+              hint: "e.g Parto Team",
+              label: "Your Team Name",
+              icon: Icon(Icons.person_outline_sharp),
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -172,13 +167,12 @@ class _SignUpScreenState extends State<SignUpScreen>
             const SizedBox(
               height: 16,
             ),
-            InputField(
-                type: TextInputType.emailAddress,
-                hint: "Type An Email Address",
-                label: "Email Member",
-                icon: const Icon(Icons.email_outlined),
-                style: TxtTheme.calloutRegular
-                    .copyWith(color: swatch.BaseColors.white)),
+            const InputField(
+              type: TextInputType.emailAddress,
+              hint: "Type An Email Address",
+              label: "Email Member",
+              icon: Icon(Icons.email_outlined),
+            ),
             const SizedBox(
               height: 16,
             ),
@@ -276,13 +270,12 @@ class _SignUpScreenState extends State<SignUpScreen>
         const SizedBox(
           height: 16,
         ),
-        InputField(
-            type: TextInputType.text,
-            hint: "e.g JXHIJK",
-            label: "Your Team Code",
-            icon: const Icon(Icons.code_outlined),
-            style: TxtTheme.calloutRegular
-                .copyWith(color: swatch.BaseColors.white)),
+        const InputField(
+          type: TextInputType.text,
+          hint: "e.g JXHIJK",
+          label: "Your Team Code",
+          icon: Icon(Icons.code_outlined),
+        ),
         const SizedBox(
           height: 16,
         ),
