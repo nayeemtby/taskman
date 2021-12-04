@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:taskman/screens/components/buttons.dart';
+import 'package:taskman/screens/components/input.dart';
 import '../theme/colortheme.dart' as swatch;
 import '../theme/textheme.dart';
 
@@ -312,6 +313,104 @@ class TeamCreatedDialog extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 })
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AddTaskSheet extends StatelessWidget {
+  const AddTaskSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: swatch.SecondaryColors.mediumGray,
+      // borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: BtnFlat(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: const Icon(
+                  Icons.close,
+                  color: swatch.LabelColors.secondary,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Container(
+              width: double.infinity,
+              height: 230,
+              decoration: BoxDecoration(
+                  color: swatch.SecondaryColors.lighttosca,
+                  borderRadius: BorderRadius.circular(8)),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Add New Task",
+              style: TxtTheme.calloutBold
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    "Make your team good with us, invite your team members to get going",
+                    style: TxtTheme.calloutRegular
+                        .copyWith(color: swatch.LabelColors.secondary),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            InputField(
+              type: TextInputType.emailAddress,
+              hint: "Enter Your Task Name",
+              label: "Task Name",
+              icon: const Icon(Icons.task_outlined),
+              style: TxtTheme.calloutRegular
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            BtnFlat(
+                child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.add),
+                const SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  "Add Task",
+                  style: TxtTheme.calloutBold
+                      .copyWith(color: swatch.LabelColors.quarternary),
+                )
+              ],
+            )),
+            const SizedBox(
+              height: 16,
+            ),
+            BtnPrimary(txt: "Add", onTap: () {})
           ],
         ),
       ),
