@@ -16,7 +16,7 @@ class InputField extends StatelessWidget {
       required this.hint,
       required this.label,
       required this.icon,
-      required this.style})
+      this.style})
       : super(key: key);
 
   @override
@@ -27,15 +27,17 @@ class InputField extends StatelessWidget {
         children: [
           Text(
             label,
-            style: TxtTheme.calloutRegular
-                .copyWith(color: swatch.LabelColors.secondary),
+            style: style ??
+                TxtTheme.calloutRegular
+                    .copyWith(color: swatch.LabelColors.secondary),
           ),
           const SizedBox(
             height: 12,
           ),
           TextField(
             cursorColor: Colors.white,
-            style: style,
+            style: TxtTheme.calloutRegular
+                .copyWith(color: swatch.BaseColors.white),
             keyboardType: type,
             obscureText: type == TextInputType.visiblePassword ? true : false,
             decoration: InputDecoration(
