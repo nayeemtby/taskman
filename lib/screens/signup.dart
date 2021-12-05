@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskman/screens/components/buttons.dart';
 import 'package:taskman/screens/components/input.dart';
-import 'package:taskman/screens/task_screen.dart';
+import 'package:taskman/screens/task_page.dart';
 import 'package:taskman/screens/theme/textheme.dart';
 import 'components/appbar.dart';
 import 'theme/colortheme.dart' as swatch;
