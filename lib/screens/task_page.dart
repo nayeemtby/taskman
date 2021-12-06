@@ -342,6 +342,9 @@ class TaskPage extends StatelessWidget {
                   .copyWith(color: swatch.FillColors.secondary),
             )
           ]),
+          const SizedBox(
+            height: 16,
+          ),
           Expanded(
               child: ListView(
             physics: const BouncingScrollPhysics(),
