@@ -218,6 +218,14 @@ class ProjectDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: swatch.PrimaryColors.blue,
+        child: const Icon(
+          Icons.add,
+          color: swatch.BaseColors.white,
+        ),
+      ),
       body: Material(
           color: swatch.PrimaryColors.darkGray,
           child: Container(
@@ -228,11 +236,14 @@ class ProjectDetailsScreen extends StatelessWidget {
                   MyAppBar(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const BtnFlat(
-                            child: Icon(
-                          Icons.arrow_back_ios_new_rounded,
-                          color: swatch.BaseColors.white,
-                        )),
+                        BtnFlat(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(
+                              Icons.arrow_back_ios_new_rounded,
+                              color: swatch.BaseColors.white,
+                            )),
                         Text(
                           "Project Details",
                           style: TxtTheme.calloutBold
@@ -240,6 +251,209 @@ class ProjectDetailsScreen extends StatelessWidget {
                         ),
                         const Icon(Icons.more_vert_rounded)
                       ]),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Expanded(
+                      child: ListView(
+                    children: [
+                      Material(
+                        color: swatch.SecondaryColors.mediumGray,
+                        borderRadius: BorderRadius.circular(8),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Web Design - PT Mencari Cinta Sejati",
+                                  style: TxtTheme.titleLarge.copyWith(
+                                      color: swatch.LabelColors.quarternary),
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Container(
+                                      height: 8,
+                                      width: 8,
+                                      decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(4),
+                                          color: swatch
+                                              .SecondaryColors.lighttosca),
+                                    ),
+                                    const SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(
+                                      "12 Tasks",
+                                      style: TxtTheme.footnote.copyWith(
+                                          color: swatch.FillColors.secondary),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 16,
+                                ),
+                                Text(
+                                  "Goals",
+                                  style: TxtTheme.calloutRegular.copyWith(
+                                      color: swatch.FillColors.secondary),
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                  "Lorem ipsum dolor sit amet, consectetur adipis cing elit. Sit tristique porttitor magna turpis consequat, sed. At urna, cras ultricies tristique.",
+                                  style: TxtTheme.calloutRegular.copyWith(
+                                      color: swatch.LabelColors.quarternary),
+                                ),
+                                const SizedBox(
+                                  height: 26,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Icon(
+                                          Icons.calendar_today_outlined,
+                                          color: swatch.FillColors.secondary,
+                                        ),
+                                        const SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          "March 13, 17:00 PM",
+                                          style: TxtTheme.footnote.copyWith(
+                                              color: swatch
+                                                  .LabelColors.quarternary),
+                                        )
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        const Icon(
+                                          Icons.business_center_outlined,
+                                          color: swatch.FillColors.secondary,
+                                        ),
+                                        const SizedBox(
+                                          width: 8,
+                                        ),
+                                        Text(
+                                          "Medium Project",
+                                          style: TxtTheme.footnote.copyWith(
+                                              color: swatch
+                                                  .LabelColors.quarternary),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Material(
+                        color: swatch.SecondaryColors.mediumGray,
+                        borderRadius: BorderRadius.circular(8),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "Tasks (5/12)",
+                                      style: TxtTheme.calloutBold.copyWith(
+                                          color:
+                                              swatch.LabelColors.quarternary),
+                                    ),
+                                    const SizedBox(
+                                      width: 16,
+                                    ),
+                                    Expanded(
+                                        child: Container(
+                                      width: double.infinity,
+                                      height: 16,
+                                      decoration: BoxDecoration(
+                                          color: swatch.progressbarBg,
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                      child: Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Container(
+                                          height: 16,
+                                          width: 100,
+                                          decoration: BoxDecoration(
+                                              color:
+                                                  swatch.PrimaryColors.purple,
+                                              borderRadius:
+                                                  BorderRadius.circular(8)),
+                                        ),
+                                      ),
+                                    ))
+                                  ],
+                                ),
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    for (var i = 0; i < 8; i++)
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 8.0),
+                                        child: InkWell(
+                                          onTap: () {},
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(16),
+                                            child: Row(
+                                              children: [
+                                                const Icon(
+                                                  Icons.check_box_outlined,
+                                                  color: swatch.separatorColor,
+                                                ),
+                                                const SizedBox(
+                                                  width: 8,
+                                                ),
+                                                Text(
+                                                  "Research Analysis",
+                                                  style: TxtTheme.calloutRegular
+                                                      .copyWith(
+                                                          color: swatch
+                                                              .LabelColors
+                                                              .quarternary),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ))
                 ],
               ))),
     );
