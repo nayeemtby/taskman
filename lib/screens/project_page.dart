@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'components/appbar.dart';
 import 'components/project_screen.component.dart';
 import 'theme/textheme.dart';
 import 'components/input.dart';
@@ -43,7 +45,15 @@ class ProjectScreen extends StatelessWidget {
                         );
                       },
                       itemBuilder: (ctx, index) {
-                        return const ProjectItem();
+                        return ProjectItem(
+                          ontap: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (ctx) =>
+                                        const ProjectDetailsScreen()));
+                          },
+                        );
                       }),
                 ),
                 SizedBox(
@@ -56,7 +66,15 @@ class ProjectScreen extends StatelessWidget {
                         );
                       },
                       itemBuilder: (ctx, index) {
-                        return const ProjectItem();
+                        return ProjectItem(
+                          ontap: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (ctx) =>
+                                        const ProjectDetailsScreen()));
+                          },
+                        );
                       }),
                 ),
                 SizedBox(
@@ -69,7 +87,15 @@ class ProjectScreen extends StatelessWidget {
                         );
                       },
                       itemBuilder: (ctx, index) {
-                        return const ProjectItem();
+                        return ProjectItem(
+                          ontap: () {
+                            Navigator.push(
+                                context,
+                                CupertinoPageRoute(
+                                    builder: (ctx) =>
+                                        const ProjectDetailsScreen()));
+                          },
+                        );
                       }),
                 ),
               ]),
@@ -182,6 +208,40 @@ class AddProjectSheet extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class ProjectDetailsScreen extends StatelessWidget {
+  const ProjectDetailsScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Material(
+          color: swatch.PrimaryColors.darkGray,
+          child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  MyAppBar(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const BtnFlat(
+                            child: Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          color: swatch.BaseColors.white,
+                        )),
+                        Text(
+                          "Project Details",
+                          style: TxtTheme.calloutBold
+                              .copyWith(color: swatch.FillColors.primary),
+                        ),
+                        const Icon(Icons.more_vert_rounded)
+                      ]),
+                ],
+              ))),
     );
   }
 }
