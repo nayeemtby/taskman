@@ -219,7 +219,16 @@ class ProjectDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(8),
+                      topRight: Radius.circular(8))),
+              context: context,
+              builder: (ctx) => _AddTagSheet());
+        },
         backgroundColor: swatch.PrimaryColors.blue,
         child: const Icon(
           Icons.add,
@@ -456,6 +465,124 @@ class ProjectDetailsScreen extends StatelessWidget {
                   ))
                 ],
               ))),
+    );
+  }
+}
+
+class _AddTagSheet extends StatelessWidget {
+  final List<List<Color>> _colors = [
+    [
+      swatch.PrimaryColors.blue,
+      swatch.PrimaryColors.pink,
+      swatch.PrimaryColors.yellow,
+      swatch.PrimaryColors.purple,
+      swatch.PrimaryColors.tosca,
+    ],
+    [
+      swatch.SecondaryColors.lightblue,
+      swatch.SecondaryColors.lightpink,
+      swatch.SecondaryColors.lightyellow,
+      swatch.SecondaryColors.lightpurple,
+      swatch.SecondaryColors.lighttosca
+    ],
+    [
+      swatch.FillColors.primary,
+      swatch.FillColors.secondary,
+      swatch.LabelColors.secondary,
+      swatch.LabelColors.tertiary,
+      swatch.LabelColors.quarternary
+    ]
+  ];
+  _AddTagSheet({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: swatch.SecondaryColors.mediumGray,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Add Tags",
+                  style: TxtTheme.calloutBold
+                      .copyWith(color: swatch.LabelColors.quarternary),
+                ),
+                BtnFlat(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      color: swatch.LabelColors.secondary,
+                    ))
+              ],
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            InputField(
+              type: TextInputType.text,
+              hint: "Enter Your Name Tags",
+              label: "Tag Name",
+              icon: const SizedBox(
+                width: 8,
+              ),
+              style: TxtTheme.calloutRegular
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Color",
+              style: TxtTheme.calloutRegular
+                  .copyWith(color: swatch.LabelColors.quarternary),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                for (var i = 0; i < 3; i++)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        for (var j = 0; j < 5; j++)
+                          Container(
+                            height: 48,
+                            width: 48,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              color: _colors[i][j],
+                            ),
+                          )
+                      ],
+                    ),
+                  )
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            BtnPrimary(
+                txt: "Done",
+                onTap: () {
+                  Navigator.pop(context);
+                })
+          ],
+        ),
+      ),
     );
   }
 }
