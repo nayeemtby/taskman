@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:taskman/screens/calender_page.dart';
 import 'package:taskman/screens/components/buttons.dart';
@@ -8,6 +9,7 @@ import 'theme/textheme.dart';
 import 'theme/colortheme.dart' as swatch;
 import 'components/task_screen.component.dart';
 import 'task_page.dart';
+import 'team_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   final bool showTeamCreated;
@@ -141,10 +143,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             const SizedBox(
                               width: 8,
                             ),
-                            Text(
-                              "Parto Team",
-                              style: TxtTheme.calloutBold
-                                  .copyWith(color: swatch.FillColors.primary),
+                            BtnFlat(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (ctx) => const TeamScreen()));
+                              },
+                              child: Text(
+                                "Parto Team",
+                                style: TxtTheme.calloutBold
+                                    .copyWith(color: swatch.FillColors.primary),
+                              ),
                             ),
                             const SizedBox(
                               width: 8,
