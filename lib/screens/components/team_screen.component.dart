@@ -3,13 +3,14 @@ import '../theme/textheme.dart';
 import '../theme/colortheme.dart' as swatch;
 
 class TeamMember extends StatelessWidget {
-  const TeamMember({Key? key}) : super(key: key);
+  final Color statusColor;
+  const TeamMember({Key? key, required this.statusColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 180,
-      height: 135,
+      constraints: const BoxConstraints(maxWidth: 270),
+      // width: 180,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
           color: swatch.SecondaryColors.mediumGray,
@@ -27,12 +28,12 @@ class TeamMember extends StatelessWidget {
                     maxRadius: 24,
                     backgroundColor: Colors.grey[600],
                   ),
-                  const Positioned(
+                  Positioned(
                       right: 0,
                       bottom: 0,
                       child: CircleAvatar(
                         radius: 6,
-                        backgroundColor: Color(0xff00CC39),
+                        backgroundColor: statusColor,
                       ))
                 ],
               ),
@@ -44,6 +45,7 @@ class TeamMember extends StatelessWidget {
           ),
           Text(
             "Shoo Phar Nho",
+            overflow: TextOverflow.ellipsis,
             style: TxtTheme.calloutBold
                 .copyWith(color: swatch.LabelColors.quarternary),
           ),
